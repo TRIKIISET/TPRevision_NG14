@@ -11,8 +11,8 @@ import { EmployeService } from 'src/app/services/employe.service';
 })
 export class SelectedemployeComponent implements OnInit {
 
-  employe:Employe;  
-  dep:string;
+  employe!:Employe;  
+  dep!:string;
   display :boolean = false;
   constructor(private activatedRoute:ActivatedRoute,
     private employeService:EmployeService,

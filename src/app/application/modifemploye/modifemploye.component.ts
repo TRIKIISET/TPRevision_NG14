@@ -12,9 +12,9 @@ import { EmployeService } from '../../services/employe.service';
 })
 export class ModifemployeComponent implements OnInit {
 
-  @Input() employe: Employe;
+  @Input() employe!: Employe;
   @Output() notify= new EventEmitter<Employe>();
-  lesDep: Departement[];
+  lesDep!: Departement[];
 
   employeForm: FormGroup= new FormGroup({})
   constructor(private depService: DepartementService,
@@ -22,7 +22,7 @@ export class ModifemployeComponent implements OnInit {
     private employeService:EmployeService) { }
 
   ngOnInit(): void {
-    this.employeForm = this.fb.group({
+    this.employeForm = this.fb.nonNullable.group({
        nom:[this.employe.nom, [Validators.required, Validators.pattern('^[a-zA-Z]+( [a-zA-Z]+)+$')]],
        photo: [this.employe.photo, Validators.required],
        dateNaissance: this.employe.dateNaissance,
@@ -49,7 +49,7 @@ export class ModifemployeComponent implements OnInit {
   onModifier(){
     this.employeService.updateEmploye(this.employe.id, this.employeForm.value)
     .subscribe(
-      data => this.notify.emit(data)
+      data => this.notify.emit(data) // L'objet modifié est envoyé vers le composant parent
     )
 }
 

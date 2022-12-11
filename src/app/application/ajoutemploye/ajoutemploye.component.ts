@@ -12,7 +12,7 @@ import { EmployeService } from 'src/app/services/employe.service';
 })
 export class AjoutemployeComponent implements OnInit {
 
-  lesDep: Departement[];
+  lesDep!: Departement[];
 
   employeForm: FormGroup= new FormGroup({})
   constructor(private depService: DepartementService,
@@ -21,7 +21,7 @@ export class AjoutemployeComponent implements OnInit {
     private router:Router) { }
 
   ngOnInit(): void {
-    this.employeForm = this.fb.group({
+    this.employeForm = this.fb.nonNullable.group({
        nom:['', [Validators.required, Validators.pattern('^[a-zA-Z]+( [a-zA-Z]+)+$')]],
        photo: ['', Validators.required],
        dateNaissance: [''],

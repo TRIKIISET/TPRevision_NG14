@@ -9,8 +9,8 @@ import { EmployeService } from 'src/app/services/employe.service';
 })
 export class EmployeComponent implements OnInit {
 
-  @Input() employe: Employe;
-  @Input() position: number;
+  @Input() employe!: Employe;
+  @Input() position!: number;
   @Output() notify = new EventEmitter<number>();
   constructor(private employeService: EmployeService) { }
 

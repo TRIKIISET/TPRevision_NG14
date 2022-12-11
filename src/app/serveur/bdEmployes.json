@@ -1,0 +1,69 @@
+{
+  "employes": [
+    {
+      "nom": "Nour El Houda",
+      "photo": "assets/fille.jpg",
+      "dateNaissance": "2015-02-15",
+      "adresse": {
+        "rue": "erzzr",
+        "ville": "zer",
+        "codePostal": "2080"
+      },
+      "diplomes": [
+        "BAC",
+        "ingénieur"
+      ],
+      "idDep": "1",
+      "poste": "Ingénieur",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "nom": "Mourad Ben Ali",
+      "photo": "assets/garcon.jpg",
+      "dateNaissance": "1990-03-13",
+      "adresse": {
+        "rue": "30, rue des entrepreneurs",
+        "ville": "Charguia2",
+        "codePostal": "2080"
+      },
+      "diplomes": [
+        "BAC",
+        "Diplôme d'ingénieur"
+      ],
+      "idDep": 1,
+      "poste": "Ingénieur"
+    },
+    {
+      "nom": "Ben Salah Iskander",
+      "photo": "assets/garcon.jpg",
+      "dateNaissance": "2001-12-06",
+      "adresse": {
+        "rue": "Tahar Sfar",
+        "ville": "Tunis",
+        "codePostal": 1001
+      },
+      "diplomes": [
+        "Bac",
+        "Licence"
+      ],
+      "idDep": "2",
+      "poste": "Comptable",
+      "id": 3
+    }
+  ],
+  "departements": [
+    {
+      "id": 1,
+      "nomDep": "IT"
+    },
+    {
+      "id": 2,
+      "nomDep": "Finance"
+    },
+    {
+      "id": 3,
+      "nomDep": "Innovation"
+    }
+  ]
+}
