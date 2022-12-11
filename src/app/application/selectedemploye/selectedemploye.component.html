@@ -1,0 +1,39 @@
+<div class="container pt-6">
+    <div class="row">
+        <div class="col-6">
+            <ul class="list-group" *ngIf="employe">
+                <li class="list-group-item">
+                    <img [src]="employe.photo" alt="">
+                    {{employe.nom}}
+                </li>
+
+                <li class="list-group-item"><strong>Date de naissance</strong>: {{employe.dateNaissance | date:"dd/ MM /
+                    yyyy"}}</li>
+                <li class="list-group-item"> <strong> Adresse</strong>: {{employe.adresse.rue }}
+                    {{employe.adresse.ville}} {{employe.adresse.codePostal}}
+                </li>
+                <li class="list-group-item"> <strong>Liste des diplômes:</strong>
+                    <div *ngFor="let d of employe.diplomes">
+                        {{d }}
+                    </div>
+                </li>
+                <li class="list-group-item"> <strong> Département : </strong>
+                    {{dep}}
+                </li>
+                <li class="list-group-item"> <strong> Poste : </strong>
+                    {{employe.poste}}
+                </li>
+                <li class="list-group-item"> 
+                    <input type="button" class="btn btn-warning" (click)="display = !display" value="Modifier">
+                    <input type="button" class="btn btn-secondary"  [routerLink]="['/lesemployes']" value="Retour">
+                </li>
+            </ul>
+        </div>
+        <div class="col-6" *ngIf="display">
+            <app-modifemploye [employe]= "employe"
+            (notify)="onModification($event)"></app-modifemploye>
+        </div>
+    </div>
+</div>
+
+

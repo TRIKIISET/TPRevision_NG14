@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Liste des employés</h2>
+    <form>
+        <input type="text" class="form-control" #rech>
+        <input type="button" value="Rechercher" (click)="onRechercher(rech.value)" class="btn btn-warning">
+    </form>
+    <br>
+    <div>
+              <ul class="list-group">
+                <li class="list-group-item" *ngFor= "let e of lesemployes; index as i">
+                    <app-employe [employe]="e"  [position]="i" (notify)="onSuppression($event)"></app-employe>          
+                </li>
+              </ul>
+    </div>
+</div>
+
+
+
+

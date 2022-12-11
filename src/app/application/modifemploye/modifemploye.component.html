@@ -1,0 +1,42 @@
+<h4>Modification des informations de l'employé</h4>
+<form [formGroup]="employeForm">
+    <label>Nom:</label>
+    <input type="text" class="form-control" formControlName="nom">
+    <label>Photo:</label>
+    <input type="text" class="form-control" formControlName="photo">
+    <label>Date de naissance:</label>
+    <input type="date" class="form-control" formControlName="dateNaissance">
+    <label>Adresse:</label>
+    <div formGroupName="adresse">
+        <label>Rue:</label>
+        <input type="text" class="form-control" formControlName="rue">
+        <label>Ville:</label>
+        <input type="text" class="form-control" formControlName="ville">
+        <label>Code postal:</label>
+        <input type="number" class="form-control" formControlName="codePostal">
+    </div>
+    <div>
+        <label> Liste des diplômes </label>
+        <div formArrayName="diplomes">
+            <div *ngFor="let d of diplomes.controls;  index as i">
+                <input type="text"  [formControlName]="i" [value]="d.value">
+                <input type="button" (click)="onSupprimerDiplome(i)" value="-">               
+            </div>
+            <input type="button" (click)="onAjouterDiplome()" value="+"> 
+        </div>
+    </div>
+    <label> Département</label>
+    <select formControlName="idDep">
+        <option *ngFor="let d of lesDep" [value]="d.id"> {{d.nomDep}}</option>
+    </select>
+    <div>
+        <label> Poste</label>
+        <input type="radio" name="poste" value="Ingénieur" formControlName="poste"> Ingénieur
+        <input type="radio" name="poste" value="Comptable" formControlName="poste"> Comptable
+        <input type="radio" name="poste" value="Administratif" formControlName="poste"> Administratif
+    </div>
+    <div>
+        <input type="button" value=" Confirmer" (click)="onModifier()" class="btn btn-dark">
+
+    </div>
+</form>

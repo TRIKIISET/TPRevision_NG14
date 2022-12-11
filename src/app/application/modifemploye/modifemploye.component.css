@@ -1,0 +1,5 @@
+label{ font-weight: bold;}
+
+input.ng-invalid{
+    background-color: darksalmon;
+}

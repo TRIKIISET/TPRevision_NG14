@@ -1,0 +1,16 @@
+<div class="container">
+
+    <h3>Employé num : {{position +1}}</h3>
+    <div class="d-flex justify-content-between">
+        <div>
+            <img [src]="employe.photo" alt="photo">
+            <strong>Nom</strong>: {{employe.nom}} 
+        </div>
+        <div>
+            <input type="button" value="Détails" [routerLink]="['/lesemployes', employe.id]" class="btn btn-success">
+            <input type="button" value="Supprimer" (click)="onSupprimer(employe.id)" class="btn btn-secondary">
+        </div>  
+    </div>
+  
+</div>
+
